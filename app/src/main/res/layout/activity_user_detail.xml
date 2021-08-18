@@ -19,7 +19,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginEnd="10dp"
-                app:civ_border_color="#FF909090"
+                app:civ_border_color="#BDBDBD"
                 app:civ_border_width="1.5dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +32,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/detail_name"
-                android:textColor="#000"
+                android:textColor="@color/text_icon"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@id/img_rv_photo"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,9 +44,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="5dp"
                 android:text="@string/_3000"
-                android:textColor="#000"
-                android:textSize="17sp"
-                android:textStyle="bold"
+                style="@style/values"
                 app:layout_constraintEnd_toStartOf="@id/tv_rv_followers"
                 app:layout_constraintStart_toEndOf="@id/img_rv_photo"
                 app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
@@ -57,9 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/_3000"
-                android:textColor="#000"
-                android:textSize="17sp"
-                android:textStyle="bold"
+                style="@style/values"
                 app:layout_constraintEnd_toStartOf="@id/tv_rv_following"
                 app:layout_constraintStart_toEndOf="@id/tv_rv_repository"
                 app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
@@ -68,12 +64,10 @@
                 android:id="@+id/tv_rv_following"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/_3000"
-                android:textColor="#000"
-                android:textSize="17sp"
-                android:textStyle="bold"
+                style="@style/values"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_rv_followers"
                 app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
@@ -83,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/repository"
-                android:textColor="#000"
+                android:textColor="@color/text_icon"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/tv_followers"
                 app:layout_constraintStart_toEndOf="@id/img_rv_photo"
@@ -94,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/followers"
-                android:textColor="#000"
+                android:textColor="@color/text_icon"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/tv_following"
                 app:layout_constraintStart_toEndOf="@id/tv_repository"
@@ -105,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/following"
-                android:textColor="#000"
+                android:textColor="@color/text_icon"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_followers"
@@ -127,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/detail_username"
-            android:textColor="#000"
+            android:textColor="@color/text_icon"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -142,12 +136,12 @@
                 android:src="@drawable/ic_apartment" />
 
             <TextView
-                android:paddingTop="4dp"
                 android:id="@+id/tv_rv_company"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="4dp"
                 android:text="@string/detail_company"
-                android:textColor="#000"
+                android:textColor="@color/text_icon"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -167,9 +161,9 @@
                 android:id="@+id/tv_rv_lokasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_lokasi"
-                android:textColor="#000"
                 android:paddingTop="4dp"
+                android:text="@string/detail_lokasi"
+                android:textColor="@color/text_icon"
                 android:textSize="16sp" />
         </LinearLayout>
 

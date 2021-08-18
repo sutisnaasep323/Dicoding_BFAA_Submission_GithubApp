@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".DetailUserActivity"
-            android:label = "DetailUser">
+            android:label="DetailUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />

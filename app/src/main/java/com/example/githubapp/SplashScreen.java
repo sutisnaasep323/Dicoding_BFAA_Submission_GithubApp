@@ -22,7 +22,7 @@ public class SplashScreen extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.splash);
+        setContentView(R.layout.screen_splash);
 
         image = findViewById(R.id.splash_image);
 

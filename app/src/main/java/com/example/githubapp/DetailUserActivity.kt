@@ -46,11 +46,8 @@ class DetailUserActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.share -> {
                 val intent = Intent(Intent.ACTION_SEND)
-                intent.setType("text/plain")
+                intent.type = "text/plain"
                 intent.putExtra(Intent.EXTRA_TEXT, dataUser.name)
-//                intent.putExtra(Intent.EXTRA_TEXT, dataUser.username)
-//                intent.putExtra(Intent.EXTRA_TEXT, dataUser.company)
-//                intent.putExtra(Intent.EXTRA_TEXT, dataUser.location)
                 startActivity(Intent.createChooser(intent, "Bagikan user ini ke"))
                 return true
             }

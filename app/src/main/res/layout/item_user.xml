@@ -26,20 +26,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
+            android:layout_marginTop="12dp"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="@color/text_icon"
             tools:text="@string/username" />
 
         <TextView
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_icon"
             tools:text="@string/name" />
 
         <TextView
             android:id="@+id/tv_item_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_icon"
             tools:text="@string/location" />
     </LinearLayout>
 

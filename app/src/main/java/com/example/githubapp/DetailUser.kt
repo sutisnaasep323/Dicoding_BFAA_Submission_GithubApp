@@ -8,14 +8,6 @@ import android.widget.TextView
 class DetailUser : AppCompatActivity() {
 
     companion object {
-        const val FOTO = "foto"
-        const val USERNAME = "username"
-        const val NAME = "name"
-        const val LOKASI = "lokasi"
-        const val REPOSITORY = "repository"
-        const val FOLLOWERS = "followers"
-        const val FOLLOWING = "following"
-        const val COMPANY = "company"
         const val USER = "user"
     }
 
@@ -42,22 +34,5 @@ class DetailUser : AppCompatActivity() {
         tvCompanyReceived.text = dataUser.company
         tvRepositoryReceived.text = dataUser.repository.toString()
 
-//        val foto = intent.getIntExtra(FOTO, 0)
-//        val userName = intent.getStringExtra(USERNAME)
-//        val name = intent.getStringExtra(NAME)
-//        val lokasi = intent.getStringExtra(LOKASI)
-//        val followers = intent.getIntExtra(FOLLOWERS,0)
-//        val following = intent.getIntExtra(FOLLOWING,0)
-//        val company = intent.getStringExtra(COMPANY)
-//        val repository = intent.getIntExtra(REPOSITORY,0)
-//
-//        imgFotoReceived.setImageResource(foto)
-//        tvUserNameReceived.text = userName
-//        tvNameReceived.text = name
-//        tvLocationReceived.text = lokasi
-//        tvFollowersReceived.text = followers.toString()
-//        tvFollowingReceived.text = following.toString()
-//        tvCompanyReceived.text = company
-//        tvRepositoryReceived.text = repository.toString()
     }
 }

@@ -36,14 +36,6 @@ package com.example.githubapp
     private fun showSelectedUser(user: User) {
         val intent = Intent(this@MainActivity, DetailUser::class.java)
         intent.putExtra(DetailUser.USER, user)
-//        intent.putExtra(DetailUser.FOTO, user.avatar)
-//        intent.putExtra(DetailUser.USERNAME, user.username)
-//        intent.putExtra(DetailUser.NAME, user.name)
-//        intent.putExtra(DetailUser.LOKASI, user.location)
-//        intent.putExtra(DetailUser.FOLLOWERS, user.followers)
-//        intent.putExtra(DetailUser.FOLLOWING, user.following)
-//        intent.putExtra(DetailUser.COMPANY, user.company)
-//        intent.putExtra(DetailUser.REPOSITORY, user.repository)
         startActivity(intent)
     }
 

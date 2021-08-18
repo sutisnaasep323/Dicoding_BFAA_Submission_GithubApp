@@ -34,8 +34,8 @@ package com.example.githubapp
     }
 
     private fun showSelectedUser(user: User) {
-        val intent = Intent(this@MainActivity, DetailUser::class.java)
-        intent.putExtra(DetailUser.USER, user)
+        val intent = Intent(this@MainActivity, DetailUserActivity::class.java)
+        intent.putExtra(DetailUserActivity.USER, user)
         startActivity(intent)
     }
 

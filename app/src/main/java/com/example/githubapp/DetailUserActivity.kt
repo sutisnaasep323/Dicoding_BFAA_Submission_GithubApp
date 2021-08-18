@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.TextView
 import com.example.githubapp.databinding.ActivityUserDetailBinding
 
 class DetailUserActivity : AppCompatActivity() {
@@ -22,15 +20,6 @@ class DetailUserActivity : AppCompatActivity() {
         binding = ActivityUserDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val imgFotoReceived: ImageView = findViewById(R.id.img_rv_photo)
-//        val tvUserNameReceived: TextView = findViewById(R.id.tv_rv_username)
-//        val tvNameReceived: TextView = findViewById(R.id.tv_rv_name)
-//        val tvLocationReceived: TextView = findViewById(R.id.tv_rv_lokasi)
-//        val tvFollowersReceived: TextView = findViewById(R.id.tv_rv_followers)
-//        val tvFollowingReceived: TextView = findViewById(R.id.tv_rv_following)
-//        val tvCompanyReceived: TextView = findViewById(R.id.tv_rv_company)
-//        val tvRepositoryReceived: TextView = findViewById(R.id.tv_rv_repository)
-
         val dataUser = intent.getParcelableExtra<User>(USER) as User
         binding.imgRvPhoto.setImageResource(dataUser.avatar)
         binding.tvRvUsername.text = dataUser.username
@@ -40,15 +29,6 @@ class DetailUserActivity : AppCompatActivity() {
         binding.tvRvFollowers.text = dataUser.followers.toString()
         binding.tvRvFollowing.text = dataUser.following.toString()
         binding.tvRvRepository.text = dataUser.repository.toString()
-
-//        imgFotoReceived.setImageResource(dataUser.avatar)
-//        tvUserNameReceived.text = dataUser.username
-//        tvNameReceived.text = dataUser.name
-//        tvLocationReceived.text = dataUser.location
-//        tvFollowersReceived.text = dataUser.followers.toString()
-//        tvFollowingReceived.text = dataUser.following.toString()
-//        tvCompanyReceived.text = dataUser.company
-//        tvRepositoryReceived.text = dataUser.repository.toString()
 
         supportActionBar?.title = dataUser.name
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

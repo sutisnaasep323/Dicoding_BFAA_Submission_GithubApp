@@ -123,7 +123,8 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_rv_company"
@@ -132,19 +133,12 @@
             android:text="@string/detail_company"
             android:textColor="@color/text_icon" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/tv_rv_lokasi"
             style="@style/IconValues"
             android:drawableStart="@drawable/ic_location"
             android:text="@string/location"
             android:textColor="@color/text_icon" />
-
     </LinearLayout>
 
 </LinearLayout>

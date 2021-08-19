@@ -11,7 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.githubapp.R
 import com.example.githubapp.Model.User
 
-class UserAdapter(var listUser: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
+class UserAdapter(private var listUser: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {

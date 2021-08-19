@@ -10,15 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".DetailUserActivity"
+            android:name=".Activity.DetailUserActivity"
             android:label="DetailUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Activity.MainActivity" />
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashActivity">
-            <intent-filter>
+        <activity android:name=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

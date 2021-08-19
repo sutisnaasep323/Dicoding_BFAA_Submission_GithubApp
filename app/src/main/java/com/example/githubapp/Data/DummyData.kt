@@ -1,6 +1,9 @@
-package com.example.githubapp
+package com.example.githubapp.Data
 
-object UserData {
+import com.example.githubapp.Model.User
+import com.example.githubapp.R
+
+object DummyData {
 
     private val username = arrayOf(
         "JakeWharton",

@@ -1,4 +1,4 @@
-package com.example.githubapp
+package com.example.githubapp.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.githubapp.R
+import com.example.githubapp.Model.User
 
 class UserAdapter(var listUser: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
@@ -21,7 +23,7 @@ class UserAdapter(var listUser: ArrayList<User>) : RecyclerView.Adapter<UserAdap
         return listUser.size
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val user = listUser[position]
         Glide.with(holder.itemView.context)
             .load(user.avatar)

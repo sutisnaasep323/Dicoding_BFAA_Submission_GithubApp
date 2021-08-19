@@ -1,10 +1,12 @@
-package com.example.githubapp
+package com.example.githubapp.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import com.example.githubapp.R
+import com.example.githubapp.Model.User
 import com.example.githubapp.databinding.ActivityUserDetailBinding
 
 class DetailUserActivity : AppCompatActivity() {

@@ -1,12 +1,16 @@
-package com.example.githubapp
+package com.example.githubapp.Activity
 
     import android.content.Intent
     import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
     import androidx.recyclerview.widget.LinearLayoutManager
     import androidx.recyclerview.widget.RecyclerView
+    import com.example.githubapp.Data.DummyData
+    import com.example.githubapp.R
+    import com.example.githubapp.Model.User
+    import com.example.githubapp.Adapter.UserAdapter
 
-    class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
         private lateinit var rvUser: RecyclerView
         private var list: ArrayList<User> = arrayListOf()
 
@@ -19,7 +23,7 @@ package com.example.githubapp
         rvUser = findViewById(R.id.rv_user)
         rvUser.setHasFixedSize(true)
 
-        list.addAll(UserData.listData)
+        list.addAll(DummyData.listData)
         showRecyclerList()
     }
 

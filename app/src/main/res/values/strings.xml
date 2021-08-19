@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">User`s</string>
+    <string name="app_name">CATHUB</string>
     <string name="username">Username</string>
     <string name="name">nama</string>
     <string name="location">lokasi</string>
     <string name="detail_username">Username User</string>
     <string name="detail_name">Nama user</string>
-    <string name="detail_lokasi">Lokasi User</string>
     <string name="_3000">3000</string>
     <string name="repository">Repository</string>
     <string name="followers">Followers</string>
     <string name="following">Following</string>
     <string name="detail_company">Company User</string>
+    <string name="share">Share</string>
 
 
 </resources>

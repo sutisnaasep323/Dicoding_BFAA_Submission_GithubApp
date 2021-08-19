@@ -7,10 +7,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="values">
+    <style name="TextValues">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/text_icon</item>
         <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="IconValues">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">4dp</item>
     </style>
 
 </resources>

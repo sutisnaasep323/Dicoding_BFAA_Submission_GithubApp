@@ -14,6 +14,8 @@ package com.example.githubapp
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.title = "User's"
+
         rvUser = findViewById(R.id.rv_user)
         rvUser.setHasFixedSize(true)
 

@@ -1,172 +1,150 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/img_rv_photo"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginEnd="10dp"
-                app:civ_border_color="#BDBDBD"
-                app:civ_border_width="1.5dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/tv_rv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/detail_name"
-                android:textColor="@color/text_icon"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@id/img_rv_photo"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_rv_repository"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="5dp"
-                android:text="@string/_3000"
-                style="@style/values"
-                app:layout_constraintEnd_toStartOf="@id/tv_rv_followers"
-                app:layout_constraintStart_toEndOf="@id/img_rv_photo"
-                app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
-
-            <TextView
-                android:id="@+id/tv_rv_followers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/_3000"
-                style="@style/values"
-                app:layout_constraintEnd_toStartOf="@id/tv_rv_following"
-                app:layout_constraintStart_toEndOf="@id/tv_rv_repository"
-                app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
-
-            <TextView
-                android:id="@+id/tv_rv_following"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/_3000"
-                style="@style/values"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tv_rv_followers"
-                app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
-
-            <TextView
-                android:id="@+id/tv_repository"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/repository"
-                android:textColor="@color/text_icon"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@id/tv_followers"
-                app:layout_constraintStart_toEndOf="@id/img_rv_photo"
-                app:layout_constraintTop_toBottomOf="@id/tv_rv_repository" />
-
-            <TextView
-                android:id="@+id/tv_followers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/followers"
-                android:textColor="@color/text_icon"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@id/tv_following"
-                app:layout_constraintStart_toEndOf="@id/tv_repository"
-                app:layout_constraintTop_toBottomOf="@id/tv_rv_followers" />
-
-            <TextView
-                android:id="@+id/tv_following"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/following"
-                android:textColor="@color/text_icon"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tv_followers"
-                app:layout_constraintTop_toBottomOf="@id/tv_rv_following" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_marginTop="7dp"
-                android:background="#838383"
-                app:layout_constraintStart_toEndOf="@id/img_rv_photo"
-                app:layout_constraintTop_toBottomOf="@id/tv_followers" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_rv_photo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="10dp"
+            app:civ_border_color="#BDBDBD"
+            app:civ_border_width="1.5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_rv_username"
+            android:id="@+id/tv_rv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/detail_username"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/detail_name"
             android:textColor="@color/text_icon"
-            android:textSize="16sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/img_rv_photo"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_rv_repository"
+            style="@style/TextValues"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/_3000"
+            app:layout_constraintEnd_toStartOf="@id/tv_rv_followers"
+            app:layout_constraintStart_toEndOf="@id/img_rv_photo"
+            app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="5dp"
-                android:src="@drawable/ic_apartment" />
-
-            <TextView
-                android:id="@+id/tv_rv_company"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:text="@string/detail_company"
-                android:textColor="@color/text_icon"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_rv_followers"
+            style="@style/TextValues"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="16dp"
+            android:text="@string/_3000"
+            app:layout_constraintEnd_toStartOf="@id/tv_rv_following"
+            app:layout_constraintStart_toEndOf="@id/tv_rv_repository"
+            app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="5dp"
-                android:src="@drawable/ic_location" />
+        <TextView
+            android:id="@+id/tv_rv_following"
+            style="@style/TextValues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/_3000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_rv_followers"
+            app:layout_constraintTop_toBottomOf="@id/tv_rv_name" />
 
-            <TextView
-                android:id="@+id/tv_rv_lokasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:text="@string/detail_lokasi"
-                android:textColor="@color/text_icon"
-                android:textSize="16sp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_repository"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/repository"
+            android:textColor="@color/text_icon"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_followers"
+            app:layout_constraintStart_toEndOf="@id/img_rv_photo"
+            app:layout_constraintTop_toBottomOf="@id/tv_rv_repository" />
+
+        <TextView
+            android:id="@+id/tv_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/followers"
+            android:textColor="@color/text_icon"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_following"
+            app:layout_constraintStart_toEndOf="@id/tv_repository"
+            app:layout_constraintTop_toBottomOf="@id/tv_rv_followers" />
+
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/following"
+            android:textColor="@color/text_icon"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_followers"
+            app:layout_constraintTop_toBottomOf="@id/tv_rv_following" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:background="@color/text_icon"
+            app:layout_constraintStart_toEndOf="@id/img_rv_photo"
+            app:layout_constraintTop_toBottomOf="@id/tv_followers" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_rv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/detail_username"
+        android:textColor="@color/text_icon"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_rv_company"
+            style="@style/IconValues"
+            android:drawableStart="@drawable/ic_apartment"
+            android:text="@string/detail_company"
+            android:textColor="@color/text_icon" />
 
     </LinearLayout>
 
-</ScrollView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_rv_lokasi"
+            style="@style/IconValues"
+            android:drawableStart="@drawable/ic_location"
+            android:text="@string/location"
+            android:textColor="@color/text_icon" />
+
+    </LinearLayout>
+
+</LinearLayout>

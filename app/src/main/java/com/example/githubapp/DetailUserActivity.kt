@@ -42,12 +42,14 @@ class DetailUserActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val dataUser = intent.getParcelableExtra<User>(USER) as User
+        val data =
+            "Assalamu'alaykum Warrohmatullohi Wabarokatuh\nNama : ${dataUser.name}\nUsername : ${dataUser.username}\nPerusahaan : ${dataUser.company}\nDomisili : ${dataUser.location}\nRepository: ${dataUser.repository}\nFollowers: ${dataUser.followers}\nFollowing: ${dataUser.following}"
 
         when (item.itemId) {
             R.id.share -> {
                 val intent = Intent(Intent.ACTION_SEND)
                 intent.type = "text/plain"
-                intent.putExtra(Intent.EXTRA_TEXT, dataUser.name)
+                intent.putExtra(Intent.EXTRA_TEXT, data)
                 startActivity(Intent.createChooser(intent, "Bagikan user ini ke"))
                 return true
             }

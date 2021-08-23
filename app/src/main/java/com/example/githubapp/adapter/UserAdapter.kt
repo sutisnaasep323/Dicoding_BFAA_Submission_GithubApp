@@ -1,4 +1,4 @@
-package com.example.githubapp.Adapter
+package com.example.githubapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.githubapp.R
-import com.example.githubapp.Model.User
+import com.example.githubapp.model.User
 
 class UserAdapter(private var listUser: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
@@ -33,7 +33,7 @@ class UserAdapter(private var listUser: ArrayList<User>) : RecyclerView.Adapter<
         holder.tvName.text = user.name
         holder.tvLocation.text = user.location
 
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.absoluteAdapterPosition]) }
     }
 
     inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

@@ -1,13 +1,14 @@
-package com.example.githubapp.Activity
+package com.example.githubapp.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.example.githubapp.R
-import com.example.githubapp.Model.User
 import com.example.githubapp.databinding.ActivityUserDetailBinding
+import com.example.githubapp.model.User
 
 class DetailUserActivity : AppCompatActivity() {
 
@@ -43,9 +44,9 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val res: Resources = resources
         val dataUser = intent.getParcelableExtra<User>(USER) as User
-        val data =
-            "Assalamu'alaykum Warrohmatullohi Wabarokatuh\nNama : ${dataUser.name}\nUsername : ${dataUser.username}\nPerusahaan : ${dataUser.company}\nDomisili : ${dataUser.location}\nRepository: ${dataUser.repository}\nFollowers: ${dataUser.followers}\nFollowing: ${dataUser.following}"
+        val data = String.format(res.getString(R.string.share_data), dataUser.name, dataUser.username, dataUser.company, dataUser.location, dataUser.repository, dataUser.followers, dataUser.following)
 
         when (item.itemId) {
             R.id.share -> {

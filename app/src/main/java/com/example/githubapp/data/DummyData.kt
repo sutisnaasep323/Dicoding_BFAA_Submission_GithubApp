@@ -1,6 +1,6 @@
-package com.example.githubapp.Data
+package com.example.githubapp.data
 
-import com.example.githubapp.Model.User
+import com.example.githubapp.model.User
 import com.example.githubapp.R
 
 object DummyData {

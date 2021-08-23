@@ -1,8 +1,10 @@
-package com.example.githubapp.Model
+package com.example.githubapp.model
 
+import android.annotation.SuppressLint
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
+@SuppressLint("ParcelCreator")
 @Parcelize
 data class User(
     @JvmField

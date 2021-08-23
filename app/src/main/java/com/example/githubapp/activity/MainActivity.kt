@@ -1,18 +1,18 @@
-package com.example.githubapp.Activity
+package com.example.githubapp.activity
 
     import android.content.Intent
     import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
     import androidx.recyclerview.widget.LinearLayoutManager
     import androidx.recyclerview.widget.RecyclerView
-    import com.example.githubapp.Data.DummyData
+    import com.example.githubapp.data.DummyData
     import com.example.githubapp.R
-    import com.example.githubapp.Model.User
-    import com.example.githubapp.Adapter.UserAdapter
+    import com.example.githubapp.model.User
+    import com.example.githubapp.adapter.UserAdapter
 
 class MainActivity : AppCompatActivity() {
         private lateinit var rvUser: RecyclerView
-        private var list: ArrayList<User> = arrayListOf()
+        private val list: ArrayList<User> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

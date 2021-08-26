@@ -11,6 +11,16 @@
     <string name="following">Following</string>
     <string name="detail_company">Company User</string>
     <string name="share">Share</string>
-    <string name="share_data">Assalamualaykum Warrohmatullohi Wabarokatuh\nNama : %s\nUsername : %s\nPerusahaan : %s\nDomisili : %s\nRepository: %d\nFollowers: %d\nFollowing: %d</string>
-
+    <!--    <string name="share_data">Assalamualaykum Warrohmatullohi Wabarokatuh\nNama : %s\nUsername : %s\nPerusahaan : %s\nDomisili : %s\nRepository: %d\nFollowers: %d\nFollowing: %d</string>-->
+    <plurals name="data">
+        <item quantity="other">Assalamualaykum Warrohmatullohi Wabarokatuh
+            \nNama : %s
+            \nUsername : %s
+            \nPerusahaan : %s
+            \nDomisili : %s
+            \nRepository: %d
+            \nFollowers: %d
+            \nFollowing: %d
+        </item>
+    </plurals>
 </resources>

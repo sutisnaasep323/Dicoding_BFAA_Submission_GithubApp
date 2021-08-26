@@ -11,11 +11,13 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.githubapp.R
 import com.example.githubapp.model.User
 
-class UserAdapter(private var listUser: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
+class UserAdapter(private var listUser: ArrayList<User>) :
+    RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_user, viewGroup, false)
+        val view: View =
+            LayoutInflater.from(viewGroup.context).inflate(R.layout.item_user, viewGroup, false)
         return ListViewHolder(view)
     }
 
@@ -36,7 +38,7 @@ class UserAdapter(private var listUser: ArrayList<User>) : RecyclerView.Adapter<
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.absoluteAdapterPosition]) }
     }
 
-    inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvUserName: TextView = itemView.findViewById(R.id.tv_item_username)
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvLocation: TextView = itemView.findViewById(R.id.tv_item_location)

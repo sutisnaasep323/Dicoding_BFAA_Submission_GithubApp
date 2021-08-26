@@ -129,16 +129,16 @@
         <TextView
             android:id="@+id/tv_rv_company"
             style="@style/IconValues"
-            android:drawableStart="@drawable/ic_apartment"
             android:text="@string/detail_company"
-            android:textColor="@color/text_icon" />
+            android:textColor="@color/text_icon"
+            app:drawableStartCompat="@drawable/ic_apartment" />
 
         <TextView
             android:id="@+id/tv_rv_lokasi"
             style="@style/IconValues"
-            android:drawableStart="@drawable/ic_location"
             android:text="@string/location"
-            android:textColor="@color/text_icon" />
+            android:textColor="@color/text_icon"
+            app:drawableStartCompat="@drawable/ic_location" />
     </LinearLayout>
 
 </LinearLayout>

@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/layout/activity_search_user.xml" value="0.1734375" />
+        <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/layout/activity_splash.xml" value="0.209375" />
+        <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/layout/activity_user_detail.xml" value="0.5" />
+        <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/layout/item_search.xml" value="0.209375" />
+        <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/layout/item_user.xml" value="0.209375" />
+        <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/layout/recyclerview_search.xml" value="0.1" />
         <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/menu/option_menu.xml" value="0.209375" />
         <entry key="..\:/Study Android/Dicoding_BFAA_Submission2_GithubApp/app/src/main/res/menu/share_menu.xml" value="0.209375" />
         <entry key="..\:/Study Android/Dicoding_BFAA_Submission_GithubApp/app/src/main/res/layout/activity_splash.xml" value="0.16485507246376813" />

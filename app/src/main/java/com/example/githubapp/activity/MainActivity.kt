@@ -1,30 +1,27 @@
 package com.example.githubapp.activity
 
-import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubapp.data.DummyData
 import com.example.githubapp.R
+import com.example.githubapp.adapter.OnItemClickCallback
 import com.example.githubapp.adapter.SearchAdapter
+
 import com.example.githubapp.model.User
 import com.example.githubapp.adapter.UserAdapter
 import com.example.githubapp.databinding.ActivityMainBinding
 import com.example.githubapp.model.GitItem
-import com.loopj.android.http.AsyncHttpClient
-import com.loopj.android.http.AsyncHttpResponseHandler
-import cz.msebera.android.httpclient.Header
-import org.json.JSONObject
+import com.example.githubapp.viewModel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,13 +31,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var rvUser: RecyclerView
-    private lateinit var rvSearch: RecyclerView
-
-    //private lateinit var mainViewModel: MainViewModel
+    private lateinit var adapter: SearchAdapter
+    private lateinit var mainViewModel: MainViewModel
     private val list: ArrayList<User> = arrayListOf()
-    private val list2: ArrayList<GitItem> = arrayListOf()
 
-    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -54,8 +48,6 @@ class MainActivity : AppCompatActivity() {
         list.addAll(DummyData.listData)
         showRecyclerList()
 
-        rvSearch = findViewById(R.id.recyclerView)
-        rvSearch.setHasFixedSize(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -69,9 +61,10 @@ class MainActivity : AppCompatActivity() {
         searchView.queryHint = resources.getString(R.string.search_here)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                Toast.makeText(this@MainActivity, query,Toast.LENGTH_LONG).show()
-                showLoading(false)
-                searchDataGithub(query)
+//                Toast.makeText(this@MainActivity, query,Toast.LENGTH_LONG).show()
+                showLoading(true)
+                configMainViewModel()
+                mainViewModel.setUser(query,this@MainActivity)
                 return true
             }
             override fun onQueryTextChange(newText: String): Boolean {
@@ -79,78 +72,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
         return super.onCreateOptionsMenu(menu)
-    }
-
-    private fun searchDataGithub(username: String) {
-        binding.progressBar.visibility = View.VISIBLE
-        val client = AsyncHttpClient()
-        val url = "https://api.github.com/search/users?q=$username"
-        client.addHeader("Authorization", "token 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")
-        client.addHeader("User-Agent", "request")
-
-        client.get(url, object : AsyncHttpResponseHandler() {
-            override fun onSuccess(
-                statusCode: Int,
-                headers: Array<Header>,
-                responseBody: ByteArray
-            ) {
-                binding.progressBar.visibility = View.INVISIBLE
-
-                val listGit = ArrayList<GitItem>()
-                val result = String(responseBody)
-                Log.d(TAG, result)
-
-                try {
-                    val responseArray = JSONObject(result)
-                    val item = responseArray.getJSONArray("items")
-                    for (i in 0 until item.length()) {
-                        val i = item.getJSONObject(i)
-                        val username = i.getString("login")
-                        val avatar = i.getString("avatar_url")
-
-                        val gitItem = GitItem()
-                        gitItem.username = username
-                        gitItem.avatar = avatar
-                        listGit.add(gitItem)
-
-                        showRecyclerListSearch()
-                    }
-                } catch (e: Exception) {
-                    Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
-                    e.printStackTrace()
-                }
-            }
-
-            override fun onFailure(
-                statusCode: Int,
-                headers: Array<Header>,
-                responseBody: ByteArray,
-                error: Throwable
-            ) {
-                val errorMessage = when (statusCode) {
-                    401 -> "$statusCode : Bad Request"
-                    403 -> "$statusCode : Forbidden"
-                    404 -> "$statusCode : Not Found"
-                    else -> "$statusCode : ${error.message}"
-                }
-                Toast.makeText(this@MainActivity, errorMessage, Toast.LENGTH_SHORT).show()
-
-            }
-
-        })
-    }
-
-    private fun showRecyclerListSearch() {
-
-        rvSearch.layoutManager = LinearLayoutManager(this)
-        val listSearchUserAdapter = SearchAdapter(list2)
-        rvSearch.adapter = listSearchUserAdapter
-
-        listSearchUserAdapter.setOnItemClickCallback(object : SearchAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: GitItem) {
-                Toast.makeText(this@MainActivity, "click", Toast.LENGTH_SHORT).show()
-            }
-        })
     }
 
     private fun showRecyclerList() {
@@ -163,6 +84,34 @@ class MainActivity : AppCompatActivity() {
                 showSelectedUser(data)
             }
         })
+    }
+
+    private fun configMainViewModel() {
+        mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MainViewModel::class.java)
+        mainViewModel.getUser().observe(this, Observer {
+            adapter.setData(it)
+            configRecyclerView()
+        })
+    }
+
+    private fun configRecyclerView() {
+        adapter = SearchAdapter()
+        adapter.notifyDataSetChanged()
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.setHasFixedSize(true)
+
+        adapter.setOnItemClickCallback(object :
+            OnItemClickCallback {
+            override fun onIemClicked(userItems: GitItem) {
+                showSelectedData(userItems)
+            }
+        })
+    }
+
+    private fun showSelectedData(userItems: GitItem) {
+
     }
 
     private fun showSelectedUser(user: User) {
